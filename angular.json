@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "storyblok": {
+      "projectType": "library",
+      "root": "projects/storyblok",
+      "sourceRoot": "projects/storyblok/src",
+      "prefix": "sb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/storyblok/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/storyblok/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/storyblok/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/storyblok/src/test.ts",
+            "tsConfig": "projects/storyblok/tsconfig.spec.json",
+            "karmaConfig": "projects/storyblok/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/storyblok/**/*.ts", "projects/storyblok/**/*.html"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "storyblok",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

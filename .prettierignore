@@ -1,8 +1,14 @@
 package.json
+ng-package.json
 package-lock.json
+.eslintrc.json
 yarn.lock
 dist
 .angular
-.prettierrc
+.aws
+.ebextensions
 .idea/**/*
+.platform
+.serverless
+.prettierrc
 .vscode/**/*

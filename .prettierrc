@@ -10,23 +10,43 @@
     "printWidth": 100,
     "parser": "typescript",
     "overrides": [
-        {
-            "files": "*.component.html",
-            "options": {
-                "parser": "angular"
-            }
-        },
-        {
-            "files": "*.html",
-            "options": {
-                "parser": "html"
-            }
-        },
-        {
-            "files": ".json",
-            "options": {
-                "parser": "json"
-            }
+      {
+        "files": "*.component.html",
+        "options": {
+          "parser": "angular"
         }
+      },
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "html"
+        }
+      },
+      {
+        "files": "*.json",
+        "options": {
+          "parser": "json",
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.md",
+        "options": {
+          "parser": "markdown"
+        }
+      },
+      {
+        "files": "*.scss",
+        "options": {
+          "parser": "scss"
+        }
+      },
+      {
+        "files": "*.yml",
+        "options": {
+          "parser": "yaml",
+          "tabWidth": 2
+        }
+      }
     ]
 }
