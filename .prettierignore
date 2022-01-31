@@ -1,0 +1,8 @@
+package.json
+package-lock.json
+yarn.lock
+dist
+.angular
+.prettierrc
+.idea/**/*
+.vscode/**/*
