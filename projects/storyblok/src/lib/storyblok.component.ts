@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoryblokComponent implements OnInit {
     constructor() {
-        console.log('constructor');
+        console.log('constructor test message');
     }
 
     ngOnInit(): void {

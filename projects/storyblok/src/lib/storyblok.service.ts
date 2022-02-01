@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class StoryblokService {
     constructor() {
-        console.log('constructor');
+        console.log('constructor test message');
     }
 }
