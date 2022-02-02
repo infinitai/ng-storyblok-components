@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import Client, { Richtext } from 'storyblok-js-client';
 
 @Injectable({
@@ -7,7 +7,10 @@ import Client, { Richtext } from 'storyblok-js-client';
 export class StoryblokService {
     private sbClient: Client;
 
-    constructor(token: string, cacheSettings: { clear: 'auto'; type: 'memory' }) {
+    constructor(
+        @Inject(String) token: string,
+        @Inject(JSON) cacheSettings: { clear: 'auto'; type: 'memory' }
+    ) {
         this.sbClient = new Client({
             accessToken: token,
             cache: cacheSettings,

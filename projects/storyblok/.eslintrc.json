@@ -22,7 +22,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "storyblok",
+            "prefix": "appStoryblok",
             "style": "camelCase"
           }
         ]

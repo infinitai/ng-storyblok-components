@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
-    selector: '[storyblok]',
+    selector: '[appStoryblok]',
 })
 export class StoryblokDirective implements OnInit {
     @Input() appStoryblok = '';

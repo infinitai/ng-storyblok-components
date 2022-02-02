@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { DynamicModule } from 'ng-dynamic-component';
 
 import { StoryblokDirective } from './directive/storyblok.directive';
@@ -34,7 +36,7 @@ import { StoryblokSectionComponent } from './components/section/section.componen
         StoryblokRowComponent,
         StoryblokSectionComponent,
     ],
-    imports: [DynamicModule],
+    imports: [CommonModule, DynamicModule, RouterModule],
     exports: [
         StoryblokDirective,
 
