@@ -6,6 +6,8 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
+    "ng-dynamic-component": "^10.1.0",
+    "storyblok-js-client": "^4.2.0",
     "tslib": "^2.3.0"
   }
 }

@@ -1,7 +1,8 @@
 {
   "extends": "../../.eslintrc.json",
   "ignorePatterns": [
-    "!**/*"
+    "!**/*",
+    "node_modules/**/*"
   ],
   "overrides": [
     {
@@ -13,7 +14,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "sb",
+            "prefix": "storyblok",
             "style": "kebab-case"
           }
         ],
@@ -21,7 +22,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "sb",
+            "prefix": "storyblok",
             "style": "camelCase"
           }
         ]

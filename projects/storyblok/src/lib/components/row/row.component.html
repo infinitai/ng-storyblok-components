@@ -1,0 +1,15 @@
+<div
+    class="row"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngFor="let blok of content.body">
+        <ndc-dynamic
+            *ngIf="components"
+            [ndcDynamicComponent]="components[blok.component]"
+            [ndcDynamicInputs]="{content: blok}"
+        >
+        </ndc-dynamic>
+    </ng-container>
+</div>
