@@ -24,5 +24,13 @@
     "axios": "^0.25.0",
     "ng-dynamic-component": "^10.1.0",
     "storyblok-js-client": "^4.2.0"
+  },
+  "scripts": {
+    "build:prod": "ng build storyblok --configuration=production",
+    "pack": "cd ../../dist/storyblok && npm pack",
+    "publish": "cd ../../dist/storyblok && npm publish",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch"
   }
 }
