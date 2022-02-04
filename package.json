@@ -79,6 +79,7 @@
       "yarn prettier:fix",
       "ng-lint-staged lint --fix --"
     ],
-    "projects/**/*.{scss,html,json}": "yarn prettier:fix"
+    "projects/**/*.{scss,html,json}": "yarn prettier:fix",
+    "**/*.md": "yarn prettier:fix"
   }
 }
