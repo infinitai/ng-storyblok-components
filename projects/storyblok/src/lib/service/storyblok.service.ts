@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 import Client, { Richtext } from 'storyblok-js-client';
 
 @Injectable({
@@ -6,22 +6,36 @@ import Client, { Richtext } from 'storyblok-js-client';
 })
 export class StoryblokService {
     private sbClient: Client;
+    private version: string;
 
     constructor(
-        @Inject(String) token: string,
-        @Inject(JSON) cacheSettings: { clear: 'auto'; type: 'memory' }
+        @Inject('storyblokAccessToken') accessToken: string,
+        @Inject('storyblokVersion') version: string,
+        @Inject('storyblokCacheSettings')
+        @Optional()
+        cacheSettings: { clear: 'auto'; type: 'memory' }
     ) {
         this.sbClient = new Client({
-            accessToken: token,
+            accessToken: accessToken,
             cache: cacheSettings,
         });
+
+        this.version = version;
     }
 
     getStory(slug: string, params?: object): Promise<any> {
+        params = {
+            ...{ version: this.version },
+            ...params,
+        };
         return this.sbClient.getStory(slug, params).then((res) => res.data);
     }
 
     getStories(params?: object): Promise<any> {
+        params = {
+            ...{ version: this.version },
+            ...params,
+        };
         return this.sbClient.getStories(params).then((res) => res.data);
     }
 
@@ -30,6 +44,10 @@ export class StoryblokService {
     }
 
     getData(slug: string, params?: object): Promise<any> {
+        params = {
+            ...{ version: this.version },
+            ...params,
+        };
         return this.sbClient
             .get('cdn/datasource_entries', params)
             .then((response) => {
