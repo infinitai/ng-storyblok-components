@@ -1,0 +1,75 @@
+<h1
+    *ngIf="content.type==='h1'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngIf="content.strong">
+        <strong>
+            <span [innerHTML]="content.text"></span>
+        </strong>
+    </ng-container>
+    <ng-container *ngIf="content.strong === false">
+        <span [innerHTML]="content.text"></span>
+    </ng-container>
+</h1>
+<h2
+    *ngIf="content.type==='h2'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngIf="content.strong">
+        <strong>
+            <span [innerHTML]="content.text"></span>
+        </strong>
+    </ng-container>
+    <ng-container *ngIf="content.strong === false">
+        <span [innerHTML]="content.text"></span>
+    </ng-container>
+</h2>
+<h3
+    *ngIf="content.type==='h3'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngIf="content.strong">
+        <strong>
+            <span [innerHTML]="content.text"></span>
+        </strong>
+    </ng-container>
+    <ng-container *ngIf="content.strong === false">
+        <span [innerHTML]="content.text"></span>
+    </ng-container>
+</h3>
+<h4
+    *ngIf="content.type==='h4'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngIf="content.strong">
+        <strong>
+            <span [innerHTML]="content.text"></span>
+        </strong>
+    </ng-container>
+    <ng-container *ngIf="content.strong === false">
+        <span [innerHTML]="content.text"></span>
+    </ng-container>
+</h4>
+<h5
+    *ngIf="content.type==='h5'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    [appStoryblok]="content._editable"
+>
+    <ng-container *ngIf="content.strong">
+        <strong>
+            <span [innerHTML]="content.text"></span>
+        </strong>
+    </ng-container>
+    <ng-container *ngIf="content.strong === false">
+        <span [innerHTML]="content.text"></span>
+    </ng-container>
+</h5>

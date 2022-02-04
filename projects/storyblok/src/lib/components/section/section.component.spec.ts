@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StoryblokComponent } from './storyblok.component';
+import { StoryblokSectionComponent } from './section.component';
 
-describe('StoryblokComponent', () => {
-    let component: StoryblokComponent;
-    let fixture: ComponentFixture<StoryblokComponent>;
+describe('StoryblokSectionComponent', () => {
+    let component: StoryblokSectionComponent;
+    let fixture: ComponentFixture<StoryblokSectionComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [StoryblokComponent],
+            declarations: [StoryblokSectionComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(StoryblokComponent);
+        fixture = TestBed.createComponent(StoryblokSectionComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

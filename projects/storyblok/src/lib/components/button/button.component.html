@@ -1,0 +1,19 @@
+<a
+    class="btn"
+    [routerLink]="content.link.url"
+    [target]="content.external ? '_blank':'self'"
+    [ngClass]="content.style_classes"
+    [style]="content.inline_styles"
+    role="button"
+    [appStoryblok]="content._editable"
+>
+    <img
+        *ngIf="content.image"
+        [src]="content.image"
+        src=""
+        [alt]="content.text"
+        [ngClass]="content.image_style_classes"
+        [style]="content.image_inline_styles"
+    />
+    <span *ngIf="!content.image" [innerHTML]="content.text"></span>
+</a>

@@ -1,19 +1,33 @@
 {
-  "name": "ng-storyblok-helper",
+  "name": "@infinitai/ng-storyblok-helper",
   "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "author": {
+    "name": "JB",
+    "email": "jb@infinitai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infinitai/ng-storyblok-helper.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:debug:firefox": "ng test --browsers=Firefox",
+    "test:debug:chrome": "ng test --browsers=ChromeDebugging",
     "lint": "ng lint",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:prod": "ng build --configuration=production"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
     "@angular/common": "~13.1.0",
@@ -65,6 +79,7 @@
       "yarn prettier:fix",
       "ng-lint-staged lint --fix --"
     ],
-    "projects/**/*.{scss,html,json}": "yarn prettier:fix"
+    "projects/**/*.{scss,html,json}": "yarn prettier:fix",
+    "**/*.md": "yarn prettier:fix"
   }
 }

@@ -1,6 +1,11 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/storyblok",
+  "allowedNonPeerDependencies": [
+    "axios",
+    "ng-dynamic-component",
+    "storyblok-js-client"
+  ],
   "lib": {
     "entryFile": "src/public-api.ts"
   }

@@ -1,0 +1,16 @@
+<ng-container *ngIf="content.link.url">
+    <a [routerLink]="content.link.url">
+        <i
+            [ngClass]="content.style_classes"
+            [style]="content.inline_styles"
+            [appStoryblok]="content._editable"
+        ></i>
+    </a>
+</ng-container>
+<ng-container *ngIf="!content.link.url">
+    <i
+        [ngClass]="content.style_classes"
+        [style]="content.inline_styles"
+        [appStoryblok]="content._editable"
+    ></i>
+</ng-container>
