@@ -32,20 +32,6 @@ cd ng-storyblok-helper
 yarn
 ```
 
-## Unit Tests
-
-Run tests once:
-
-```
-npm run test
-```
-
-Keep karma open:
-
-```
-npm run test:debug:chrome
-```
-
 ## Contributing
 
 1. Rebase production: `git pull --rebase`
@@ -58,6 +44,30 @@ npm run test:debug:chrome
 ## Commit message guidelines
 
 Commit messages are linted using [commit-lint](https://github.com/marionebl/commitlint). Linting rules can be found in [package.json](https://github.com/nib-group/angular-wn/blob/master/package.json#L54). Commit messages should have mandatory `type` and `description`, also optional `scope`. Commit types should be as per Angular's [guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type).
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Unit Tests
+
+Run tests once:
+
+```
+ng test
+```
+
+to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Keep karma open:
+
+```
+npm run test:debug:chrome
+```
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Workflow considerations
 
