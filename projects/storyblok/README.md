@@ -38,6 +38,17 @@ After building your library, run `yarn publish`. This will upload the package fo
 
 Run `ng test storyblok` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Generate shared components in your space
+
+The component templates are created in JSON format for easy syncing purposes. You can find them at [template\components.json](./template/components.json).
+To generate these components, run the command `yarn push-components $SPACE_ID` where $SPACE_ID is the id of your space.
+
+> Be warned that if you already have a component matching the name of the shared component templates, these will override them.
+
+The components follow a particular structure that's common to make life easier for the end users.
+It provides inline styling or styling flexibility and remain agnostic to the styles used.
+Only bootstrap template used is in the column for sizing purposes.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

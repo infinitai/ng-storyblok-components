@@ -26,6 +26,7 @@
     "storyblok-js-client": "^4.2.0"
   },
   "scripts": {
+    "push-components": "storyblok login && storyblok push-components ./template/components.json --space ",
     "build:prod": "ng build storyblok --configuration=production",
     "pack": "cd ../../dist/storyblok && npm pack",
     "publish": "cd ../../dist/storyblok && npm publish",
