@@ -106,6 +106,7 @@ Only bootstrap template used is in the column for sizing purposes.
 
 ## Documentation
 
+-   [Components Guide](./COMPONENTS.md)
 -   [Contributing guidelines for developers](./CONTRIBUTING.md)
 
 ## Further help
