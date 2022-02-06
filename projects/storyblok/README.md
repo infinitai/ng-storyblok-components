@@ -1,42 +1,97 @@
 # Storyblok
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+## Usage
 
-## Code scaffolding
+### Package Installation
 
-Run `ng generate component component-name --project storyblok` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project storyblok`.
+To add the package to your project, you need to register a Personal Access Token (PAT) for Github packages.
+This will provide you access to retrieve the package using NPM cli.
 
-> Note: Don't forget to add `--project storyblok` or else it will be added to the default project in your `angular.json` file.
+You can find the instructions on how to install the package [here](https://docs.github.com/en/packages/learn-github-packages/installing-a-package).
 
-## Build
+You can find more information about getting your own Github Personal Access Token (PAT) [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-Run `yarn build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Once you have installed the package, you can start using it in your project.
 
-## Versioning
+### Add Storyblok Bridge Script
 
-Before the package is built for release, the version needs to be upgraded. Open the terminal on `./projects/storyblok` folder. Execute the command that reflects the change.
+Add the Javascript bridge below to `index.html` of your project.
 
--   to upgrade a major version: `yarn version:major`
--   to upgrade a minor version: `yarn version:minor`
--   to upgrade a patch version: `yarn version:patch`
+```
+<script src="http://app.storyblok.com/f/storyblok-latest.js?t=Q2mIMuV6frKpnmQlOee0rAtt" type="text/javascript"></script>
+```
 
-## Build Release
+### Add Environment Values for Storyblok
 
-Run `yarn build:prod` to build the project. This will build the artifacts similar to [Build](#Build), but with production based configuration.
+When you setup a Storyblok space, you can generate API keys for different access levels.
+Two of them are **public** and **preview** (draft).
+You can configure in your environment files in the angular project.
 
-## Packing (Optional)
+-   For development, you can use the **preview** token with the version value set as **draft**.
+-   For production, you can use the **public** token with the version value set as **publish**.
 
-You can choose to Pack the release using `yarn pack` command to generate the output tgz file.
-This is only if you need to inspect the package that gets uploaded.
-Otherwise, publish will automatically do this for you.
+```
+export const environment = {
+    storyblok: {
+        token: <!-- STORYBLOK TOKEN -->,
+        version: [draft | published],
+    },
+};
+```
 
-## Publishing
+### Initialize Storyblok Service
 
-After building your library, run `yarn publish`. This will upload the package for you.
+In the AppModule of your project, you need to setup the provider.
 
-## Running unit tests
+It uses the environment specific values for the token and version with the default cache settings configured for memory.
 
-Run `ng test storyblok` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+@NgModule({
+    declarations: [
+      ...
+    ],
+    imports: [
+      ...
+    ],
+    providers: [
+      ...
+      // storyblok
+      [
+        {provide: 'storyblokAccessToken', useValue: environment.storyblok.token},
+        {provide: 'storyblokVersion', useValue: environment.storyblok.version},
+        {provide: 'storyblokCacheSettings', useValue: { clear: 'auto', type: 'memory' }},
+      ]
+    ],
+    bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+Once the providers are configured, then you can use the service in any component as shown below.
+The service constructor will be injected with the providers configured in the module above.
+
+```
+import {Components, StoryblokService, StoryblokStoryModel} from "@infinitai/ng-storyblok-helper";
+
+@Component({
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+})
+export class HomeComponent {
+    story!: StoryblokStoryModel;
+    components = Components;
+
+    constructor(private readonly storyblokService: StoryblokService) { }
+
+    ngOnInit(): void {
+        this.storyblokService
+            .getStory(`home`)
+            .then((data) => {
+                this.story = data.story;
+            });
+    }
+}
+```
 
 ## Generate shared components in your space
 
@@ -48,6 +103,10 @@ To generate these components, run the command `yarn push-components $SPACE_ID` w
 The components follow a particular structure that's common to make life easier for the end users.
 It provides inline styling or styling flexibility and remain agnostic to the styles used.
 Only bootstrap template used is in the column for sizing purposes.
+
+## Documentation
+
+-   [Contributing guidelines for developers](./CONTRIBUTING.md)
 
 ## Further help
 
