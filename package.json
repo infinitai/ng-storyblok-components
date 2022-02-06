@@ -1,5 +1,5 @@
 {
-  "name": "@infinitai/ng-storyblok-helper",
+  "name": "@infinitai/ng-storyblok-components",
   "version": "0.0.0",
   "license": "MIT",
   "private": false,
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/infinitai/ng-storyblok-helper.git"
+    "url": "https://github.com/infinitai/ng-storyblok-components.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -73,13 +73,5 @@
     "ng-packagr": "^13.0.0",
     "prettier": "^2.5.1",
     "typescript": "~4.5.2"
-  },
-  "lint-staged": {
-    "projects/**/*.{ts,js}": [
-      "yarn prettier:fix",
-      "ng-lint-staged lint --fix --"
-    ],
-    "projects/**/*.{scss,html,json}": "yarn prettier:fix",
-    "**/*.md": "yarn prettier:fix"
   }
 }
