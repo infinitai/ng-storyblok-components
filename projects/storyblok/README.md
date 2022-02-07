@@ -108,6 +108,7 @@ Only bootstrap template used is in the column for sizing purposes.
 
 -   [Components Guide](./COMPONENTS.md)
 -   [Contributing guidelines for developers](./CONTRIBUTING.md)
+-   [Storyblok Developer Guide for Angular](https://www.storyblok.com/tp/add-a-headless-cms-to-angular-in-5-minutes)
 
 ## Further help
 
